@@ -11,10 +11,10 @@ This project involves creating an Electron-based desktop application that stream
 ## UI Screenshots
 
 ### Main Screen
-![Main Screen](FIRST UI.PNG)
+![Main Screen](FIRST-UI.PNG)
 
 ### Stream View
-![Stream View](SECOND UI.PNG)
+![Stream View](SECOND-UI.PNG)
 
 ## Prerequisites
 
