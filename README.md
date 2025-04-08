@@ -8,6 +8,13 @@ This project involves creating an Electron-based desktop application that stream
 - **YOLOv8 Hat Detection**: A pre-trained YOLOv8 model is used to detect hats in the live video feed.
 - **Real-time Stream**: The video stream is served via a Flask API from a camera or network video stream.
 - **Responsive Design**: The app adapts to various screen sizes and provides smooth transitions and animations.
+## UI Screenshots
+
+### Main Screen
+![Main Screen](FIRST UI.PNG)
+
+### Stream View
+![Stream View](SECOND UI.PNG)
 
 ## Prerequisites
 
