@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Elegant Stream App</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #1e1f3d, #2e1a47, #204050, #4b206e);
+      background-size: 400% 400%;
+      animation: calmFlow 20s ease infinite;
+      color: white;
+      font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    @keyframes calmFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 2.5em;
+      font-weight: 600;
+      text-shadow: 0 2px 15px rgba(180, 100, 255, 0.2);
+      margin-bottom: 40px;
+    }
+
+    .watch-button {
+      background: linear-gradient(135deg, #00ff9c, #32cd32);
+      color: #fff;
+      padding: 14px 36px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.3em;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 18px rgba(0, 255, 153, 0.3), 0 0 8px rgba(0, 255, 100, 0.25) inset;
+      transition: all 0.25s ease-in-out;
+    }
+
+    .watch-button:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 25px rgba(0, 255, 153, 0.45), 0 0 12px rgba(0, 255, 153, 0.35) inset;
+    }
+
+    .titlebar {
+      position: absolute;
+      top: 14px;
+      left: 18px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .circle {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+    }
+
+    .red { background-color: #ff5f57; }
+    .yellow { background-color: #ffbd2e; }
+    .green { background-color: #28c940; }
+
+    #video-container {
+      margin-top: 30px;
+      display: none;
+      padding: 10px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+    }
+
+    #video-stream {
+      border-radius: 16px;
+      max-width: 600px;
+      max-height: 480px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="titlebar">
+    <div class="circle red"></div>
+    <div class="circle yellow"></div>
+    <div class="circle green"></div>
+  </div>
+
+  <h1>🌌 Hat checker live Streaming</h1>
+  <button class="watch-button" onclick="startStream()">Watch Stream</button>
+
+  <div id="video-container">
+    <img id="video-stream" src="" alt="Video Stream">
+  </div>
+
+  <script>
+    function startStream() {
+      const video = document.getElementById("video-stream");
+      const container = document.getElementById("video-container");
+      video.src = "http://localhost:5000/stream";
+      container.style.display = "block";
+    }
+  </script>
+</body>
+</html>
